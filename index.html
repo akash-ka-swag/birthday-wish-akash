@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Birthday Wishes 🎉</title>
+  <meta property="og:title" content="Birthday Wish Demo - Order ₹199">
   <style>
     body { background: #0a0a0a; color: white; font-family: 'Arial', sans-serif; text-align: center; margin: 0; padding: 20px; }
     h1 { color: #ff0080; text-shadow: 0 0 10px #ff0080; font-size: 32px; }
@@ -40,6 +41,10 @@
       confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
       document.getElementById('birthdaySong').play();
     }
-  </script>
+  <script>
+setTimeout(() => {
+  alert("Ye Demo version hai. Apni Photo + Gaana wali site ke liye ₹199 me order kare. WhatsApp: 9580173772");
+}, 10000); // 10 sec baad popup aayega
+</script>
 </body>
 </html>
