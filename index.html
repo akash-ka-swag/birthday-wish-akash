@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Birthday Wishes 🎉</title>
+<meta property="og:title" content="Birthday Wish Demo - Order ₹199">
   <style>
     body { background: #0a0a0a; color: white; font-family: 'Arial', sans-serif; text-align: center; margin: 0; padding: 20px; }
     h1 { color: #ff0080; text-shadow: 0 0 10px #ff0080; font-size: 32px; }
@@ -25,21 +26,40 @@
     <div class="cake">🎂</div>
     <h2 id="wishText"></h2>
     <p id="wishMsg"></p>
+ <br>
+<button onclick="orderNow()" style="background:#25D366; font-size:18px; padding:15px 30px; margin-top:15px;">
+  📱 Photo + Gaana wali banwaye ₹199
+</button>
   </div>
   <audio id="birthdaySong" src="./birthday.mp3"></audio>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
-  <script>
-    function wishKaro() {
-      let naam = document.getElementById('naam').value;
-      if(naam == ""){ alert("Naam to daal bhai 😅"); return; }
-      const messages = ["Tum jiyo 1000 saal 🎉","Party hard! Cake mera 😂","God bless you bhai 🔥","Tere jaisa dost kismat se milta hai 💯","Aaj tere saare sapne poore ho 🎁"];
-      let randomMsg = messages[Math.floor(Math.random() * messages.length)];
-      document.getElementById('wishText').innerHTML = `Happy Birthday ${naam}! 🎂`;
-      document.getElementById('wishMsg').innerHTML = randomMsg;
-      document.getElementById('wishBox').style.display = 'block';
-      confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
-      document.getElementById('birthdaySong').play();
-    }
-  </script>
+<script>
+  function wishKaro() {
+    let naam = document.getElementById('naam').value;
+    if(naam == ""){ alert("Naam to daal bhai 😅"); return; }
+    
+    const messages = ["Tum jiyo 1000 saal 🎉","Party hard! Cake mera 😎","God bless you bhai 🔥","Tere jaisa dost kismat se milta hai ❤️"];
+    let randomMsg = messages[Math.floor(Math.random() * messages.length)];
+    
+    document.getElementById('wishText').innerHTML = `Happy Birthday ${naam}! 🥳`;
+    document.getElementById('wishMsg').innerHTML = randomMsg;
+    document.getElementById('wishBox').style.display = 'block';
+    confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
+    document.getElementById('birthdaySong').play();
+  }
+
+  function orderNow(){
+    let msg = `Bhai Birthday Website chahiye ₹199 wali.
+
+Jiska Birthday hai uska Naam:
+Photo: Abhi bhejta hu
+Gaana: Konsa lagana hai?`;
+    window.open(`https://wa.me/919580173772?text=${encodeURIComponent(msg)}`, '_blank');
+  }
+
+  setTimeout(() => {
+    alert("Ye Demo version hai. Apni Photo + Gaana wali site ke liye ₹199 me order kare. WhatsApp: 9580173772");
+  }, 10000); // 10 sec baad popup aayega
+</script>
 </body>
 </html>
